@@ -27,7 +27,7 @@ body {
 
 .grid-item {
   display: grid;
-  grid-template-columns: 30% 1fr 56px;
+  grid-template-columns: minmax(200px, 30%) 1fr 56px;
   background: white;
   color: #777494;
   border-radius: 4px;
@@ -49,6 +49,7 @@ body {
   margin-right: 16px;
 }
 .grid-info__name {
+  user-select: none;
   color: #1c184d;
   font-size: 1rem;
   letter-spacing: 0.1px;
@@ -57,16 +58,21 @@ body {
 .grid-info__address {
   color: #777494;
   letter-spacing: 0.4px;
-  line-height: 1.25rem;
+  /*line-height: 1.25rem;*/
   font-size: 0.75rem;
 }
-.grid-info__address span {
+.grid-info__address .locality {
+  white-space: nowrap;
+}
+.grid-info__address .street:after {
+  content: "•";
+  display: inline-block;
   margin: 0 4px;
 }
 
 .grid-days {
   font-size: 0.875rem;
-  line-height: 20px;
+  line-height: 1.1rem; /* 1.25 = 20px */
 }
 .grid-days .name {
   display: none;
@@ -74,23 +80,47 @@ body {
 .grid-days > div {
   justify-content: space-between;
   width: calc(100% / 7);
+  padding-right: 8px;
 }
 .grid-days__open {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
+.grid-days__open span {
+  margin-bottom: 0.375rem;
+}
+.grid-days__open span:last-child {
+  margin-bottom: 0;
+}
 
 .grid-item .grid-edit {
   justify-content: center;
   align-items: stretch;
 }
-.grid-edit button {
-  padding: 16px;
+
+.btn-grid {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 400;
+  color: #1c184d;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #00ceb0;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Tablet */
-@media only screen and (max-width: 1024px) {
+/* Tablet 1024 */
+@media only screen and (max-width: 860px) {
   .grid-item {
     grid-template: 1fr 1fr / 1fr 56px;
   }
@@ -100,8 +130,11 @@ body {
   .grid-item .grid-days {
     padding-top: 0;
   }
+  .grid-item > div {
+    padding: 8px 0;
+  }
   .grid-info {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
   .grid-days {
     grid-area: 2;
@@ -117,8 +150,8 @@ body {
   }
 }
 
-/* Phone */
-@media only screen and (max-width: 768px) {
+/* Phone  768px */
+@media only screen and (max-width: 600px) {
   .grid-item {
     grid-template: 1fr / 1fr 56px;
   }
@@ -132,11 +165,12 @@ body {
   .grid-days > div {
     width: 100%;
     display: grid;
-    grid-template-columns: minmax(min-content, max-content) 1fr;
+    grid-template: 1fr / minmax(min-content, max-content) 1fr;
     gap: 0.5rem;
   }
   .grid-days__open span {
     margin-right: 1rem;
+    margin-bottom: 0.375rem !important;
   }
   .grid-edit {
     grid-area: inherit;
@@ -157,10 +191,36 @@ body {
   .phone-lite .grid-days {
     display: none;
   }
+  .grid-item.phone-lite .grid-info {
+    padding-bottom: 0;
+  }
+
+  /* Phone list */
+  .phone-list.time-horizontal .grid-days__open {
+    flex-direction: row;
+  }
+  .phone-list.time-vertical .grid-days__open {
+    flex-direction: column;
+  }
+
+  /* Phone scroll */
+  .phone-scroll .grid-days {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  .phone-scroll.date-horizontal .grid-days > div {
+    grid-template: 1fr / minmax(min-content, max-content) 1fr;
+  }
+  .phone-scroll.date-vertical .grid-days > div {
+    grid-template: 1fr / 1fr;
+  }
 }
 
-@media only screen and (max-width: 375px) {
-  .grid-days__open {
-    flex-direction: column;
+/* Does not support */
+@media only screen and (max-width: 319px) {
+  #main {
+    background: red;
   }
 }
