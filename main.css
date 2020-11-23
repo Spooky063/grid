@@ -45,7 +45,7 @@ label {
 
 input[type="checkbox"],
 input[type="checkbox" i] {
-  background-color: transparent;
+  background-color: white;
   appearance: none;
   font: 16px/1em sans-serif;
   width: 16px;
