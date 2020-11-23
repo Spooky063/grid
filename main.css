@@ -9,6 +9,10 @@
 :focus {
   outline: 2px solid #1c184d;
 }
+:active,
+:target {
+  outline: none;
+}
 input[type="checkbox"]:focus {
   outline: none;
   border: 2px solid #1c184d;
@@ -99,6 +103,7 @@ input[type="checkbox" i]:checked:before {
   -webkit-transition: box-shadow 0.3ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .grid-item:hover {
+  /*cursor: pointer;*/
   box-shadow: 0 5px 10px 0 rgba(24, 33, 77, 0.05);
 }
 .grid-item:focus {
@@ -170,6 +175,24 @@ input[type="checkbox" i]:checked:before {
   justify-content: center;
   align-items: stretch;
 }
+.grid-item:hover > .grid-edit .arrow {
+  display: flex;
+}
+.grid-edit:focus .arrow,
+.btn-grid:focus .arrow {
+  display: flex;
+}
+.grid-edit .arrow {
+  width: 100%;
+  display: none;
+  justify-content: center;
+}
+.grid-edit .arrow svg {
+  display: inline-flex;
+  width: 15px;
+  height: auto;
+  color: #00ceb0;
+}
 
 .btn-grid {
   display: inline-block;
@@ -183,7 +206,7 @@ input[type="checkbox" i]:checked:before {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #00ceb0;
+  background-color: transparent;
   border: none;
   font-size: 1rem;
   line-height: 1.5;
