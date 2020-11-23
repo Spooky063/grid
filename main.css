@@ -6,6 +6,13 @@
 [aria-hidden="true"] {
   display: none;
 }
+:focus {
+  outline: 2px solid #1c184d;
+}
+input[type="checkbox"]:focus {
+  outline: none;
+  border: 2px solid #1c184d;
+}
 
 @font-face {
   font-family: "Sofia Pro";
@@ -31,11 +38,48 @@ body {
   background: rgba(28, 19, 119, 0.1);
 }
 
+/* Checkbox */
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="checkbox" i] {
+  background-color: transparent;
+  appearance: none;
+  font: 16px/1em sans-serif;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+input[type="checkbox" i]:before {
+  pointer-events: none;
+  will-change: background-color, border-color;
+  transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    border-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+input[type="checkbox"]:checked:before,
+input[type="checkbox" i]:checked:before {
+  background: #1c1377;
+  color: #fff;
+  content: "\2713";
+  /*content: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiPgo8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTEuNzMsMTIuOTEgOC4xLDE5LjI4IDIyLjc5LDQuNTkiPjwvcGF0aD4KPC9zdmc+");*/
+  text-align: center;
+  font: 16px/1em sans-serif;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  position: absolute;
+  margin: -2px 0 0 -2px;
+}
+
+/* Default */
 .container {
   padding: 40px;
 }
 
-/* Default */
 .grid {
   display: grid;
   gap: 1rem;
@@ -145,6 +189,10 @@ body {
 
 /* Tablet 1024 */
 @media only screen and (max-width: 860px) {
+  .container {
+    padding: 24px;
+  }
+
   .grid-item {
     grid-template: 1fr 1fr / 1fr 56px;
   }
@@ -183,6 +231,10 @@ body {
 
 /* Phone  768px */
 @media only screen and (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
   .grid-item {
     grid-template: 1fr / 1fr 56px;
   }
@@ -220,6 +272,9 @@ body {
 
   /* Phone lite */
   .phone-lite .grid-days {
+    display: none;
+  }
+  .phone-lite .grid-info__checkbox {
     display: none;
   }
   .grid-item.phone-lite .grid-info {
