@@ -183,14 +183,13 @@ input[type="checkbox" i]:checked:before {
   display: flex;
 }
 .grid-edit .arrow {
-  width: 100%;
   display: none;
   justify-content: center;
 }
 .grid-edit .arrow svg {
   display: inline-flex;
   width: 15px;
-  height: auto;
+  height: 15px;
   color: #00ceb0;
 }
 
