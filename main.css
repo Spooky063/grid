@@ -411,7 +411,7 @@ input[type="checkbox" i]:checked:before {
 @media screen and (display-mode: standalone) {
   #header {
     height: calc(var(--header-height) * 1.5) !important;
-    padding-top: calc(var(--header-top) * 4) !important;
+    padding-top: calc(var(--header-top) * 3) !important;
   }
 
   #main {
