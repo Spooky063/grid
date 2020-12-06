@@ -2,436 +2,457 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js" defer></script>
-    <title>Document</title>
+    <title>App</title>
+    <meta name="description" content="App meta desscription">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1c1377">
 </head>
-<body id="main">
-    <div class="container">
-        <div class="grid">
-            <div class="grid-item grid-item__1 phone-list time-horizontal">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_1" name="check_1">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_1" class="grid-info__name">Cafe Coton San Francisco</label>
-                        <div class="grid-info__address">
-                            <span class="street">2190 Lombard Street, Between Steiner and Fillmore Streets</span><span class="locality">San Francisco, CA 94123</span>
+<body>
+    <div id="header" role="region" aria-label="heading">
+        <div id="navigation">
+            <h1><a href="/">App</a></h1>
+            <nav class="breadcrumb" role="navigation" aria-label="main">
+                <ul class="c-breadcrumb__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" itemtype="http://schema.org/Thing" href="/etablissements?ref=breadcrumb">
+                            <span itemprop="name">Etablissements</span>
+                        </a>
+                        <meta itemprop="position" content="{{ loop.index }}" />
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="main" role="main">
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item grid-item__1 phone-list time-horizontal">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_1" name="check_1">
                         </div>
+                        <div class="grid-info__value">
+                            <label for="check_1" class="grid-info__name">Cafe Coton San Francisco</label>
+                            <div class="grid-info__address">
+                                <span class="street">2190 Lombard Street, Between Steiner and Fillmore Streets</span><span class="locality">San Francisco, CA 94123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">06 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">07 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">08 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">09 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">10 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">11 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">12 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 1');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
                 </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">06 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__2">
-                        <div class="name">07 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__3">
-                        <div class="name">08 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">09 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">10 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">11 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">12 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 1');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="grid-item grid-item__2 phone-list time-vertical">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_2" name="check_2">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_2" class="grid-info__name">Cafe Coton San Francisco 2</label>
-                        <div class="grid-info__address">
-                            <span class="street">181 3rd Street</span><span class="locality">San Francisco, CA 94123</span>
+                <div class="grid-item grid-item__2 phone-list time-vertical">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_2" name="check_2">
                         </div>
+                        <div class="grid-info__value">
+                            <label for="check_2" class="grid-info__name">Cafe Coton San Francisco 2</label>
+                            <div class="grid-info__address">
+                                <span class="street">181 3rd Street</span><span class="locality">San Francisco, CA 94123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">06 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">07 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">08 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">09 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">10 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">11 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">12 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 2');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
                 </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">06 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__2">
-                        <div class="name">07 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__3">
-                        <div class="name">08 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">09 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">10 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">11 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">12 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 2');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="grid-item grid-item__3 phone-scroll date-horizontal">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_3" name="check_3">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_3" class="grid-info__name">Cafe Coton Lille</label>
-                        <div class="grid-info__address">
-                            <span class="street">3 av. du générales de Gaulle</span><span class="locality">59000 Lille</span>
+                <div class="grid-item grid-item__3 phone-scroll date-horizontal">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_3" name="check_3">
                         </div>
+                        <div class="grid-info__value">
+                            <label for="check_3" class="grid-info__name">Cafe Coton Lille</label>
+                            <div class="grid-info__address">
+                                <span class="street">3 av. du générales de Gaulle</span><span class="locality">59000 Lille</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">06 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">07 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">08 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">09 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">10 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">11 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">12 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 3');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
                 </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">06 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__2">
-                        <div class="name">07 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__3">
-                        <div class="name">08 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">09 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">10 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">11 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">12 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 3');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="grid-item grid-item__4 phone-scroll date-vertical">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_4" name="check_4">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_4" class="grid-info__name">Cafe Coton Lyon</label>
-                        <div class="grid-info__address">
-                            <span class="street">12 impasse de Diderot</span><span class="locality">69000 Lyon</span>
+                <div class="grid-item grid-item__4 phone-scroll date-vertical">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_4" name="check_4">
                         </div>
+                        <div class="grid-info__value">
+                            <label for="check_4" class="grid-info__name">Cafe Coton Lyon</label>
+                            <div class="grid-info__address">
+                                <span class="street">12 impasse de Diderot</span><span class="locality">69000 Lyon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">06 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">07 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">08 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">09 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">10 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">11 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">12 juin.</div>
+                            <div class="grid-days__open">
+                                <span>10h30-18h30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 4');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
                 </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">06 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__2">
-                        <div class="name">07 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__3">
-                        <div class="name">08 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">09 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">10 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">11 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">12 juin.</div>
-                        <div class="grid-days__open">
-                            <span>10h30-18h30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 4');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="grid-item grid-item__5 btn-full">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_5" name="check_5">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_5" class="grid-info__name">Cafe Coton Paris</label>
-                        <div class="grid-info__address">
-                            <span class="street">65 av. des Champs Elysée</span><span class="locality">75000 Paris</span>
+                <div class="grid-item grid-item__5 btn-full">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_5" name="check_5">
                         </div>
+                        <div class="grid-info__value">
+                            <label for="check_5" class="grid-info__name">Cafe Coton Paris</label>
+                            <div class="grid-info__address">
+                                <span class="street">65 av. des Champs Elysée</span><span class="locality">75000 Paris</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">Lun. 06 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">Mar. 07 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">Mer. 08 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">Jeu. 09 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">Ven. 10 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">Sam. 11 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">Dim. 12 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 5');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
                 </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">Lun. 06 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__2">
-                        <div class="name">Mar. 07 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__3">
-                        <div class="name">Mer. 08 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">Jeu. 09 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">Ven. 10 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">Sam. 11 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">Dim. 12 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 5');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="grid-item grid-item__6 phone-lite">
-                <div class="grid-info">
-                    <div class="grid-info__checkbox">
-                        <input type="checkbox" id="check_6" name="check_6">
-                    </div>
-                    <div class="grid-info__value">
-                        <label for="check_6" class="grid-info__name">Cafe Coton Clermont-Ferrand</label>
-                        <div class="grid-info__address">
-                            <span class="street">15 rue de la libération</span><span class="locality">63000 Clermont-Ferrand</span>
+                <div class="grid-item grid-item__6 phone-lite">
+                    <div class="grid-info">
+                        <div class="grid-info__checkbox">
+                            <input type="checkbox" id="check_6" name="check_6">
+                        </div>
+                        <div class="grid-info__value">
+                            <label for="check_6" class="grid-info__name">Cafe Coton Clermont-Ferrand</label>
+                            <div class="grid-info__address">
+                                <span class="street">15 rue de la libération</span><span class="locality">63000 Clermont-Ferrand</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="grid-days">
-                    <div class="grid-days__1">
-                        <div class="name">Lun. 06 juin</div>
-                        <div class="grid-days__open">
-                            <span>Fermé</span>
+                    <div class="grid-days">
+                        <div class="grid-days__1">
+                            <div class="name">Lun. 06 juin</div>
+                            <div class="grid-days__open">
+                                <span>Fermé</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__2">
+                            <div class="name">Mar. 07 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__3">
+                            <div class="name">Mer. 08 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__4">
+                            <div class="name">Jeu. 09 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__5">
+                            <div class="name">Ven. 10 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__6">
+                            <div class="name">Sam. 11 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
+                        </div>
+                        <div class="grid-days__7">
+                            <div class="name">Dim. 12 juin</div>
+                            <div class="grid-days__open">
+                                <span>10h30-12h30</span>
+                                <span>10h30-12h30</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid-days__2">
-                        <div class="name">Mar. 07 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
+                    <div class="grid-edit">
+                        <button class="btn-grid" onclick="javascript:alert('click 6');this.blur();" aria-label="Edit">
+                            <i class="arrow">
+                                <svg viewBox="0 0 32 32">
+                                    <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
+                                </svg>
+                            </i>
+                        </button>
                     </div>
-                    <div class="grid-days__3">
-                        <div class="name">Mer. 08 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__4">
-                        <div class="name">Jeu. 09 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__5">
-                        <div class="name">Ven. 10 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__6">
-                        <div class="name">Sam. 11 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                    <div class="grid-days__7">
-                        <div class="name">Dim. 12 juin</div>
-                        <div class="grid-days__open">
-                            <span>10h30-12h30</span>
-                            <span>10h30-12h30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-edit">
-                    <button class="btn-grid" onclick="javascript:alert('click 6');this.blur();">
-                        <i class="arrow">
-                            <svg viewBox="0 0 32 32">
-                                <path fill="currentColor" d="M16 0l-2.82 2.82L24.34 14H0v4h24.34L13.18 29.18 16 32l16-16L16 0z"/>
-                            </svg>
-                        </i>
-                    </button>
                 </div>
             </div>
         </div>
