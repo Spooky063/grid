@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light;
+
+  --bg-color: #1c13771a;
+  --color-white: #ffffff;
+  --color-grey: #e0e0e0;
+  --color-green: #00ceb0;
+  --color-blue: #1c1377;
+  --color-accent-blue: #1c184d;
+  --color-muted-blue: #57546d; /* old #777494 but contrast is not ok => #57546D ok */
+}
+
+* {
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@page {
+  margin: 2cm;
+  size: A4 portrait;
+}
+
+body {
+  background: #ffffff !important;
+}
+
+#header {
+  position: relative !important;
+  --color-blue: #1c1377;
+  --color-white: #ffffff;
+}
+
+#main {
+  padding-top: 0px !important;
+}
+
+.grid-item {
+  background: #1c13771a !important;
+  grid-template-columns: minmax(200px, 30%) 1fr !important; /* delete edit button */
+  page-break-after: always;
+}
+.grid-item .grid-edit {
+  display: none;
+}
+
+a {
+  page-break-inside: avoid;
+}
+
+a[href^="http"]:after {
+  content: " <" attr(href) "> ";
+}
