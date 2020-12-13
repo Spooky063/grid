@@ -70,9 +70,7 @@ body {
   width: 100%;
   background: var(--color-blue);
   color: var(--color-white);
-}
 
-#header {
   padding: 16px 24px;
   padding-top: var(--header-top);
 }
