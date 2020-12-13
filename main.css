@@ -423,6 +423,7 @@ input[type="checkbox" i]:checked:before {
   }
 }
 
+/* Animation reduced */
 @media (prefers-reduced-motion) {
   :root {
     --transition-duration: 0ms;
@@ -430,7 +431,32 @@ input[type="checkbox" i]:checked:before {
   }
 }
 
+/* Dark mode common*/
 @media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --bg-color: #121212;
+
+    --color-white: #333333;
+    --color-blue: #eeeeee;
+    --color-accent-blue: #eeeeee;
+    --color-muted-blue: #c4c4c4;
+  }
+
+  #header {
+    --color-blue: #333333;
+    --color-white: #eeeeee;
+  }
+
+  img,
+  svg {
+    filter: brightness(0.8) contrast(1.2);
+  }
+}
+
+/* Dark mode Safari/Webkit */
+@media (prefers-dark-interface) {
   :root {
     color-scheme: dark;
 
