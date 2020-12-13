@@ -12,7 +12,7 @@
     X-Content-Type-Options = "nosniff"
     Vary = "Accept-Encoding"
     Referrer-Policy = "no-referrer-when-downgrade"
-    Content-Security-Policy = "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+    Content-Security-Policy = "base-uri 'self'; default-src 'self' http: https: data: blob: 'unsafe-inline'"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
 [[headers]]
