@@ -478,3 +478,11 @@ input[type="checkbox" i]:checked:before {
     filter: brightness(0.8) contrast(1.2);
   }
 }
+
+/* https://medium.com/@draganeror/iphone-x-layout-features-with-css-environment-variables-d57423433dec */
+@supports (padding-top: env(safe-area-inset-top)) {
+  #main {
+    --safe-area-inset-top: env(safe-area-inset-top);
+    padding-bottom: var(--safe-area-inset-top);
+  }
+}
