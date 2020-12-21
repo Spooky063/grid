@@ -7,6 +7,10 @@
 [aria-hidden="true"] {
   display: none;
 }
+[hidden] {
+  display: none;
+}
+
 :root {
   color-scheme: light;
 
@@ -62,6 +66,19 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overscroll-behavior: contain; /* https://usefulangle.com/post/278/html-disable-pull-to-refresh-with-css */
   background: var(--bg-color);
+}
+
+.visually-hidden {
+  color: var(--color-muted-blue);
+  position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+  padding:0;
+  margin: -1px;
+	border:0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
 
 #header {

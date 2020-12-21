@@ -2,8 +2,15 @@ function onClick(e) {
     e.target.closest('.grid-days').nextElementSibling.lastElementChild.click();
 }
 
+function onKeyDown(e) {
+  if (e.key === "Enter") {
+    e.target.closest('.grid-days').nextElementSibling.lastElementChild.click();
+  }
+}
+
 Array.from(document.querySelectorAll('.grid-days')).forEach(function(value) {
     value.addEventListener('click', this.onClick.bind(this));
+    value.addEventListener('keydown', this.onKeyDown.bind(this));
 });
 
 if ('serviceWorker' in navigator) {
